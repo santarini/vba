@@ -17,6 +17,6 @@ DoEvents
 Loop Until IE.ReadyState = 4
 
 'If ReadyState is workign use an actual wait value
-'Application.Wait Now + TimeValue("00:00:05")
+    'Application.Wait Now + TimeValue("00:00:05")
 
 'IE.Quit
