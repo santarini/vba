@@ -1,5 +1,7 @@
 # excel macros
 
+I'm not entirely sure if these are bas files but I wrote them in the visual basic devolper of Excel and uploaded them here.
+
 * BasicSearch.bas
 * InternetExplorer.bas
 * QueryTables.bas
