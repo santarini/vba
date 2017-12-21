@@ -9,11 +9,11 @@ I'm not entirely sure if these work as bas files but I wrote them in the visual 
 * QueryTables.bas
   * creates a temp page, creates a new query table on the temp page based off a specificed URL
 * clubSearch.bas
- * this looks for a cells containing a phrase and shifts them to the right
+  * this looks for a cells containing a phrase and shifts them to the right
 * createTable.bas
- * this turns a column of data  into a table using a target phrase
+  * this turns a column of data  into a table using a target phrase
 * moveYN.bas
- * formats a row a cell contains the word "yes" or "no"
+  * formats a row a cell contains the word "yes" or "no"
 * rename.bas
   * a loop that renames local files
 * ynSearchLoop.bas
