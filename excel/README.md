@@ -1,6 +1,6 @@
 # excel macros
 
-I'm not entirely sure if these work as bas files but I wrote them in the visual basic devolper of Excel and uploaded them here.
+I'm not entirely sure if these work as bas files but I wrote them in the visual basic devolper of Excel and uploaded them here. Right now this is a just a place for mass upload; I'll organize the scripts into folders eventually.
 
 * BasicSearch.bas
   * basic word search, finds the phrase you're looking for and activates the cell containing that phrase
