@@ -6,7 +6,11 @@ MyRequest.Send
 
 Dim Json As Object
 Set Json = JsonConverter.ParseJson(MyRequest.ResponseText)
+Dim Dict As New Dictionary
+Dict.CompareMode = CompareMethod.TextCompare
+Dict("A") = "Stock Quotes"
 
-MsgBox Json("Meta Data")("1. Information")
+LastRefreshed = Json(Dict.Item("A"))(2)("1. symbol")
+MsgBox LastRefreshed
 
 End Sub
