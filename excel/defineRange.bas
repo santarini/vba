@@ -18,5 +18,8 @@ Dim cellCount As Integer
 rowCount = rng.Rows.Count
 cellCount = rng.Cells.Count
 
+'verify
+        
 MsgBox rowCount
 MsgBox cellCount
+MsgBox rngTrgt
