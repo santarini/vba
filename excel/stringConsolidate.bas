@@ -1,4 +1,4 @@
-Sub countInCell()
+Sub stringConsolidate()
 
 Dim rngData As Range
 Dim rngBgn As Range
