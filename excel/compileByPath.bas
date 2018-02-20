@@ -1,14 +1,15 @@
 Sub compileByPath()
 
-Dim PathName As String
+Dim FolderPath As String
 Dim FileName As String
 Dim FileNumber As Integer
 Dim WB As Workbook
 
-FileNumber = 1
+FileNumber = 2
 
-FilePath = "C:\Users\m4k04\Desktop\vb_files"
-FileName = FilePath & FileNumber & ".csv"
+FolderPath = "C:\Users\m4k04\Desktop\vb_files\"
+FileName = FolderPath & FileNumber & ".csv"
+
 
 Set WB = Workbooks.Open(FileName)
 
