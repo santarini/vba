@@ -27,21 +27,23 @@ Do While FileName <> ""
 Loop
 
 
-'for 1 to count
-'open the file
-FileNumber = 1
+For FileNumber = 1 To Count
 
-FileName = FolderPath & FileNumber & ".csv"
+    'open the file
 
-Set WB = Workbooks.Open(FileName)
+    FileName = FolderPath & FileNumber & ".csv"
+    
+    Set WB = Workbooks.Open(FileName)
+    
+    'copy its contents
+    
+    
+    
+    'paste it into the main workbook
+    
+    
+    'close file
 
-'copy its contents
-
-
-
-'paste it into the main workbook
-
-
-'close file
+Next i
 
 End Sub
