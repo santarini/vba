@@ -11,6 +11,8 @@ Dim WB As Workbook
 'set this workbook as the main workbook
 
 Set MainWB = ActiveWorkbook
+Seets.Add.Name = "DataSet"
+
 
 'define folder path
 FolderPath = "C:\Users\m4k04\Desktop\vb_files\"
@@ -37,13 +39,15 @@ For FileNumber = 1 To Count
     
     'copy its contents
     
-    
-    
+    WB.Range("A1").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.Copy
+
     'paste it into the main workbook
     
+    MainWB.Range("A1").Select
     
     'close file
 
-Next i
-
+Next FileNumber
 End Sub
