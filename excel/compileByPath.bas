@@ -30,8 +30,6 @@ Do While FileName <> ""
     FileName = Dir()
 Loop
 
-MsgBox Count
-
 For FileNumber = 1 To Count
 
     'open the file
