@@ -15,6 +15,7 @@ Set MainWB = ActiveWorkbook
 MainWB.Sheets.Add.Name = "DataSet"
 Set Rng = Range("A1")
 
+Application.DisplayAlerts = False
 
 'define folder path
 FolderPath = "C:\Users\m4k04\Desktop\vb_files\"
