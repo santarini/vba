@@ -1,17 +1,15 @@
-<b>Select Text After Character (,)</b>
+<b>Extract Text After Character</b>
 
-  `=RIGHT(A1,LEN(A1)-FIND(",",A1))`
+  `=RIGHT(A1,LEN(A1)-FIND("Character",A1))`
 
-<b>Select Text Before Character</b>
+<b>Extract Text Before Character</b>
 
-  `=LEFT(A1,FIND(",",A1)-1)`
+  `=LEFT(A1,FIND("Character",A1)-1)`
 
+<b>Extract Test Between Characters</b>
 
-<b>Select Test Between Characters</b>
+  `=MID(A1,SEARCH("FirstChar",A1)+3,SEARCH("LastChar",A1)-SEARCH("FirstChar",A1)-4)`
 
+<b>Extracts text after first occurence of second character, after first occurence of first character</b>
 
-
-<b>Select Text After Second occurence of space</b>
-
-
-  `=MID(A1, FIND(" ", A1, FIND(" ", A1)+1)+1,256)`
+  `=MID(A1, FIND("SecondChar", A1, FIND("FirstChar", A1)+1)+1,256)`
