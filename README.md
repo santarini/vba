@@ -1,6 +1,4 @@
-# vba
-
-Visually Complex
+# Visually Complex
 
 
-You must dig deeper into the rabbit hole.
+You must dig deeper into the rabbit hole to find what you seek ...
