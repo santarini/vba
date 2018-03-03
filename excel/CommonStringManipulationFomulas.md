@@ -1,3 +1,11 @@
+<b>Extract 5 Characters from Beginning of Cell</b>
+  
+  `=LEFT(A1,5)`
+  
+<b>Extract 5 Characters from End of Cell</b>
+  
+  `=Right(A1,5)`
+
 <b>Extract Text After First Occurence of Character</b>
 
   `=RIGHT(A1,LEN(A1)-FIND("Character",A1))`
