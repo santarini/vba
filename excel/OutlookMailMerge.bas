@@ -1,4 +1,4 @@
-Sub Open_Outlook()
+Sub OutlookMailMerge()
 
 Dim objOutlook As Object
 Dim Msg As Object
