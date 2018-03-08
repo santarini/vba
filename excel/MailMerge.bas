@@ -1,5 +1,3 @@
-Sub ReadData()
-
 Dim NameHeader As Range
 Dim AdrsHeader As Range
 Dim NameRange As Range
@@ -30,18 +28,25 @@ Dim Msg As Object
     Set AdrsRange = Selection
     AdrsCount = NameRange.Rows.Count
     
-    NameHeader.Offset(1, 0).Select
+    NameRange.Rows(1).Select
+    
+    AdrsRange.Rows(1).Select
     
     
 For i = 1 To NameCount
+
+    NameRange.Rows(i).Select
+    FirstName = Selection
+    AdrsRange.Rows(i).Select
+    EmailAdrs = Selection
     
     Set objOutlook = CreateObject("Outlook.Application")
     Set Msg = objOutlook.CreateItem(0)
     
     With Msg
-     .to = "someone@something.com;"
-     .Subject = "What are you sending this for"
-     .HTMLBody "Whatever you whant to say"
+     .to = EmailAdrs
+     .Subject = "You are invited!"
+     .HTMLBody = "Dear " & FirstName & ",<br><br>Whatever you whant to say."
      .send
     End With
 
