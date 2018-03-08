@@ -6,9 +6,9 @@
   
   `=Right(A1,5)`
   
-<b>Extract text after 5 characters</b>
+<b>Extract 10 charactes after first 5 characters</b>
 
-  `=MID(A1,5,255)`
+  `=MID(A1,5,10)`
   
 <b>Extract Text After First Occurence of Character</b>
 
