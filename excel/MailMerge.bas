@@ -1,5 +1,7 @@
+'these headers ranges aren't really used in this script's current state, but I defined them for future use
 Dim NameHeader As Range
 Dim AdrsHeader As Range
+
 Dim NameRange As Range
 Dim NameCount As Integer
 Dim AdrsRange As Range
@@ -18,7 +20,6 @@ Dim Msg As Object
     Set NameRange = Selection
     NameCount = NameRange.Rows.Count
     
-    
     Cells.Find(What:="Email", After:=ActiveCell, LookIn:=xlFormulas, LookAt _
         :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
         True, SearchFormat:=False).Activate
@@ -27,12 +28,7 @@ Dim Msg As Object
     Range(Selection, Selection.End(xlDown)).Select
     Set AdrsRange = Selection
     AdrsCount = NameRange.Rows.Count
-    
-    NameRange.Rows(1).Select
-    
-    AdrsRange.Rows(1).Select
-    
-    
+        
 For i = 1 To NameCount
 
     NameRange.Rows(i).Select
