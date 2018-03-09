@@ -46,7 +46,7 @@ Dim FileCell As Range
     Body2 = "Paragraph 2"
     Body3 = "Paragraph 3"
     Body4 = "Paragraph 4"
-    Signature = "<img src='C:\Users\m4k04\Desktop\logo.png'><br><b>Makoa Santarini</b><br><font color='blue'>Principal <br>Makoa Systems, Inc. <br>Address 1<br>Address 2 <br>City, State, Zip <br>Phone 1<br>Phone 2 <br>Email<br></font>http://www.makoasystems.com"
+    Signature = "<img src='C:\Users\m4k04\Desktop\logo.png'><br><b>Makoa Santarini</b><br><font color='#1f497d'>Principal <br>Makoa Systems, Inc. <br>Address 1<br>Address 2 <br>City, State, Zip <br>Phone 1<br>Phone 2 <br>Email<br></font>http://www.makoasystems.com"
     
 For i = 1 To NameCount
 
