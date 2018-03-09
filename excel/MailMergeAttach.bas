@@ -1,5 +1,7 @@
 Sub MailMerge()
 
+    'theres a lot of unecessary stuff in here still... but it works!
+    
 Dim NameHeader As Range
 Dim AdrsHeader As Range
 Dim NameRange As Range
@@ -58,8 +60,6 @@ For i = 1 To NameCount
     FirstName = Selection
     AdrsRange.Rows(i).Select
     EmailAdrs = Selection
-    FileCellRange.Rows(i).Select
-    Set FileCell = Selection
     
     Set objOutlook = CreateObject("Outlook.Application")
     Set Msg = objOutlook.CreateItem(0)
