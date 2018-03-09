@@ -9,7 +9,8 @@ Dim AdrsCount As Integer
 Dim FileCellCount As Integer
 
 Dim i As Integer
-
+Dim j As Integer
+    
 Dim objOutlook As Object
 Dim Msg As Object
 Dim Body1 As String
@@ -40,7 +41,10 @@ Dim FileCell As Range
     FileCellHeader.Offset(1, 0).Select
     Range(Selection, Selection.End(xlDown)).Select
     Set FileCellRange = Selection
-    FileCellCount = FileCellRange.Rows.Count
+    FileRowCount = FileCellRange.Rows.Count
+    FileCellRange.Resize(FileRowCount, 10).Select
+    Set FileCellRange = Selection
+    FileColumnCount = FileCellRange.Columns.Count
     
     Body1 = "Paragraph1"
     Body2 = "Paragraph 2"
@@ -61,17 +65,18 @@ For i = 1 To NameCount
     Set Msg = objOutlook.CreateItem(0)
     
     With Msg
-     .to = EmailAdrs
+     .To = EmailAdrs
      .Subject = "Join us on Mar. 29th at 5 pm for a reception with LG Doug Chin - The Pacific Club"
-     .HTMLBody = "Aloha " & FirstName & ",<br><br>" & Body1 & "<br><br>" & Body2 & "<br><br>" & Body3 & "<br><br>" & Body4 & "<br><br><br>" & "Mahalo,<br>" & Signature
-        If Trim(FileCell) <> "" Then
-            If Dir(FileCell.Value) <> "" Then
-                .Attachments.Add FileCell.Value
+     .HTMLBody = "Aloha " & FirstName & ",<br><br>" & Body1 & "<br><br>" & Body2 & "<br><br>" & Body3 & "<br><br>" & Body4 & "<br><br>" & "Mahalo,<br>Lani<br>" & Signature
+        For j = 1 To FileColumnCount
+            Set FileCell = FileCellRange.Rows(i).Columns(j)
+            If Trim(FileCell.Value) <> "" Then
+                If Dir(FileCell.Value) <> "" Then
+                    .Attachments.Add FileCell.Value
+                End If
             End If
-        End If
+        Next j
      .send
     End With
-
 Next i
-
 End Sub
