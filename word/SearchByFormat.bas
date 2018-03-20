@@ -5,14 +5,13 @@ Sub SearchBoldText()
         .ClearFormatting
         .Format = True
         .Font.Bold = True
-        'finds a bold word
         While .Execute
             rng.Select
             With Selection
                 .Font.Bold = False
                 .Font.Underline = True
                 .InsertParagraphBefore
-                .InsertParagraphAfter
+                .InsertAfter ","
             End With
         Wend
     End With
