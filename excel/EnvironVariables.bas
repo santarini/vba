@@ -5,5 +5,6 @@ Sub ListEnvironVariables()
         strEnviron = Environ(i)
         If LenB(strEnviron) = 0& Then Exit For
         Debug.Print strEnviron
+        'MsgBox strEnviron
     Next
 End Sub
