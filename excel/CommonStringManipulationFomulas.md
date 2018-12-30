@@ -22,6 +22,10 @@
   
   `=TRIM(RIGHT(SUBSTITUTE(D2,"Character",REPT(" ",255)),255))`
 
+<b>Extract Text from cell but drop last N characters</b>
+
+`=LEFT(E2,LEN(E2)-N)`
+
 <b>Extract Test Between Two Characters</b>
 
   `=MID(A1,SEARCH("FirstChar",A1)+3,SEARCH("LastChar",A1)-SEARCH("FirstChar",A1)-4)`
