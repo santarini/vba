@@ -10,13 +10,17 @@
 
   `=MID(A1,5,10)`
   
-<b>Extract Text After First Occurence of Character</b>
+<b>Extract Text from Left After First Occurence of Character</b>
 
   `=RIGHT(A1,LEN(A1)-FIND("Character",A1))`
 
-<b>Extract Text Before First Occurence of Character</b>
+<b>Extract Text from Left Before First Occurence of Character</b>
 
   `=LEFT(A1,FIND("Character",A1)-1)`
+  
+<b>Extract Text from Right Before First Occurence of Character</b>
+  
+  `=TRIM(RIGHT(SUBSTITUTE(D2,"Character",REPT(" ",255)),255))`
 
 <b>Extract Test Between Two Characters</b>
 
