@@ -1,4 +1,3 @@
-Sub ASBRegexFormat()
     Dim strTemp As String
     Dim lastRow As Long
     lastRow = ActiveDocument.BuiltInDocumentProperties("Number Of Lines")
@@ -24,6 +23,7 @@ Sub ASBRegexFormat()
     'Next instance
     Next i
     
+    Selection.HomeKey Unit:=wdStor
     Selection.Delete Unit:=wdCharacter, Count:=1
     
     'reset line count
@@ -31,4 +31,3 @@ Sub ASBRegexFormat()
     MsgBox lastRow
     
 'isolate massive numbers
-End Sub
