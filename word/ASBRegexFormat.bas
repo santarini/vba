@@ -1,16 +1,14 @@
-    Dim strTemp As String
-    Dim lastRow As Long
-    lastRow = ActiveDocument.BuiltInDocumentProperties("Number Of Lines")
-
-'isolate dates  and create seperate lines
-
-    Selection.EndKey Unit:=wdLine
+'############# isolate dates  and create seperate lines
+    ActiveDocument.Range(0, 0).Select
+    'Selection.HomeKey Unit:=wdCharacter
+    'Selection.EndKey Unit:=wdLine
+    
     'Find instance with regex and replace
     For i = 1 To lastRow
         Selection.Find.ClearFormatting
         With Selection.Find
             .MatchWildcards = True
-            .Text = "([0-9]{2})-([0-9]{2}) ([0-9]{2})-([0-9]{2})"
+            .Text = "([0-9]{23})-([0-9]{2}) ([0-9]{2})-([0-9]{2})"
             .Forward = False
             .Execute
             strTemp = Selection
@@ -23,7 +21,6 @@
     'Next instance
     Next i
     
-    Selection.HomeKey Unit:=wdStor
     Selection.Delete Unit:=wdCharacter, Count:=1
     
     'reset line count
@@ -31,3 +28,19 @@
     MsgBox lastRow
     
 'isolate massive numbers
+    For i = 1 To lastRow
+        Selection.Find.ClearFormatting
+        With Selection.Find
+            .MatchWildcards = True
+            .Text = "([0-9]{2}))"
+            .Forward = False
+            .Execute
+            strTemp = Selection
+            .Wrap = wdFindContinue
+            .Replacement.Text = Chr(13) + strTemp + ","
+            .Execute Replace:=wdReplaceOne
+        End With
+        'clear strTemp
+        strTemp = ""
+    'Next instance
+    Next i
