@@ -3,7 +3,7 @@ Sub ASBStatmentFormat()
     Dim lastRow As Long
     lastRow = ActiveDocument.BuiltInDocumentProperties("Number Of Lines")
 
-'############# isolate dates  and create seperate lines
+    '############# isolate dates  and create seperate lines
     'ActiveDocument.Range(0, 0).Select
     'Selection.HomeKey Unit:=wdCharacter
     'Selection.EndKey Unit:=wdLine
