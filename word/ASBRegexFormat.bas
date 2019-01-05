@@ -1,32 +1,7 @@
-Sub ASBFormatRegex()
-'find dates ##-## ##-##
-    Selection.Find.ClearFormatting
-    Selection.Find.Replacement.ClearFormatting
-    With Selection.Find
-        .Text = "([0-9]{2})-([0-9]{2}) ([0-9]{2})-([0-9]{2})"
-        .InsertBefore Chr(13)
-        .InsertAfter ","
-        .Forward = True
-        .Wrap = wdFindContinue
-        .Format = False
-        .MatchCase = False
-        .MatchWholeWord = False
-        .MatchAllWordForms = False
-        .MatchSoundsLike = False
-        .MatchWildcards = True
-    End With
-    Selection.Find.Execute
-    Selection.InsertBefore Chr(13)
-    Selection.InsertAfter ","
-    
-'find dollar values
-
-End Sub
-Sub WildcardTest()
+Sub ASBRegexFormat()
     Dim strTemp As String
     Dim lastRow As Long
     lastRow = ActiveDocument.BuiltInDocumentProperties("Number Of Lines")
-    MsgBox lastRow
 
 'script currently needs to be run when cursor is at the top of the page
 
