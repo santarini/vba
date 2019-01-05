@@ -4,7 +4,7 @@ Sub ASBStatmentFormat()
     lastRow = ActiveDocument.BuiltInDocumentProperties("Number Of Lines")
 
 '############# isolate dates  and create seperate lines
-    ActiveDocument.Range(0, 0).Select
+    'ActiveDocument.Range(0, 0).Select
     'Selection.HomeKey Unit:=wdCharacter
     'Selection.EndKey Unit:=wdLine
     
@@ -32,6 +32,9 @@ Sub ASBStatmentFormat()
     'reset line count
     lastRow = ActiveDocument.BuiltInDocumentProperties("Number Of Lines")
     
+    'reset cursor
+    ActiveDocument.Range(0, 0).Select
+    
 'isolate dollar amounts
     For i = 1 To lastRow
         Selection.Find.ClearFormatting
@@ -50,13 +53,37 @@ Sub ASBStatmentFormat()
     'Next instance
     Next i
     
-'Delte massive numbers
+    'reset cursor
+    ActiveDocument.Range(0, 0).Select
+    
+'Delete massive numbers
     'Selection.HomeKey Unit:=wdLine
     Selection.Find.ClearFormatting
     Selection.Find.Replacement.ClearFormatting
     With Selection.Find
         .Text = "([0-9 ]{25})"
-        .Replacement.Text = ""
+        .Replacement.Text = " "
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = False
+        .MatchCase = False
+        .MatchWholeWord = False
+        .MatchAllWordForms = False
+        .MatchSoundsLike = False
+        .MatchWildcards = True
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+ 
+    'reset cursor
+    ActiveDocument.Range(0, 0).Select
+ 
+'Delte straggler numbers
+    'Selection.HomeKey Unit:=wdLine
+    Selection.Find.ClearFormatting
+    Selection.Find.Replacement.ClearFormatting
+    With Selection.Find
+        .Text = "([ ])([0-9])([ ])"
+        .Replacement.Text = " "
         .Forward = True
         .Wrap = wdFindContinue
         .Format = False
