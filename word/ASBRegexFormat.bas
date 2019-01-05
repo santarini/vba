@@ -1,14 +1,16 @@
-Sub ASBStatmentFormat()
+Sub WildcardTest()
     Dim strTemp As String
     Dim lastRow As Long
     lastRow = ActiveDocument.BuiltInDocumentProperties("Number Of Lines")
 
-    '############# isolate dates  and create seperate lines
+'script currently needs to be run when cursor is at the top of the page
+
+'############# isolate dates  and create seperate lines
     'ActiveDocument.Range(0, 0).Select
     'Selection.HomeKey Unit:=wdCharacter
     'Selection.EndKey Unit:=wdLine
     
-    'Find instance with regex and replace
+'Find dates and put line breaks infront of them
     For i = 1 To lastRow
         Selection.Find.ClearFormatting
         With Selection.Find
@@ -27,14 +29,12 @@ Sub ASBStatmentFormat()
     Next i
     
     'Delete extra top line
+    'This creates an error delteing a random character if script is launched with cursor in middle of text
     Selection.Delete Unit:=wdCharacter, Count:=1
     
     'reset line count
     lastRow = ActiveDocument.BuiltInDocumentProperties("Number Of Lines")
-    
-    'reset cursor
-    ActiveDocument.Range(0, 0).Select
-    
+       
 'isolate dollar amounts
     For i = 1 To lastRow
         Selection.Find.ClearFormatting
@@ -94,4 +94,5 @@ Sub ASBStatmentFormat()
         .MatchWildcards = True
     End With
     Selection.Find.Execute Replace:=wdReplaceAll
+    
 End Sub
