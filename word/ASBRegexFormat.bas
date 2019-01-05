@@ -3,12 +3,12 @@ Sub ASBRegexFormat()
     Dim lastRow As Long
     lastRow = ActiveDocument.BuiltInDocumentProperties("Number Of Lines")
 
-'script currently needs to be run when cursor is at the top of the page
+    '############# NOTE: script currently needs to be run when cursor is at the top of the page
 
-'############# isolate dates  and create seperate lines
-    'ActiveDocument.Range(0, 0).Select
-    'Selection.HomeKey Unit:=wdCharacter
-    'Selection.EndKey Unit:=wdLine
+    'If I could get the cursor to go the top of the page I could avoid the issue, but all of these are not working    
+        'ActiveDocument.Range(0, 0).Select
+        'Selection.HomeKey Unit:=wdCharacter
+        'Selection.EndKey Unit:=wdLine
     
 'Find dates and put line breaks infront of them
     For i = 1 To lastRow
