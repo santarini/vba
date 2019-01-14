@@ -1,4 +1,5 @@
 Sub FlashCards()
+    'margins: Normal Margins with adjusted left:.77
     'Select all the cells
     Cells.Select
     'Resize the cells
