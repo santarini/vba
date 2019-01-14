@@ -48,17 +48,6 @@ Sub FlashCards()
         .HorizontalAlignment = xlCenter
         .VerticalAlignment = xlCenter
     End With
-    'set print area
-    Range("A1:C4").Select
-    Application.CutCopyMode = False
-    ActiveSheet.PageSetup.PrintArea = "$A$1:$C$4"
-    ActiveSheet.VPageBreaks(1).DragOff Direction:=xlToRight, RegionIndex:=1
-    Range("A1:C8").Select
-    ActiveSheet.PageSetup.PrintArea = "$A$1:$C$8"
-    Range("A1:F8").Select
-    ActiveSheet.PageSetup.PrintArea = "$A$1:$F$8"
-    Range("A1:I8").Select
-    ActiveSheet.PageSetup.PrintArea = "$A$1:$I$8"
     'reset selection
     Range("A1").Select
 End Sub
