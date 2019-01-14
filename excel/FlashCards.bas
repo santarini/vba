@@ -43,9 +43,11 @@ Sub FlashCards()
         .TintAndShade = 0
         .Weight = xlThin
     End With
+    'center the text horizontally and vertically
     With Selection
         .HorizontalAlignment = xlCenter
         .VerticalAlignment = xlCenter
     End With
+    'reset selection
     Range("A1").Select
 End Sub
