@@ -1,7 +1,10 @@
 Sub FlashCards()
+    'Select all the cells
     Cells.Select
+    'Resize the cells
     Selection.ColumnWidth = 30
     Selection.RowHeight = 172
+    'Slap some borders on them cells
     Selection.Borders(xlDiagonalDown).LineStyle = xlNone
     Selection.Borders(xlDiagonalUp).LineStyle = xlNone
     With Selection.Borders(xlEdgeLeft)
@@ -40,4 +43,9 @@ Sub FlashCards()
         .TintAndShade = 0
         .Weight = xlThin
     End With
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+    End With
+    Range("A1").Select
 End Sub
