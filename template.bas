@@ -1,7 +1,7 @@
-'*************************
+'''Docstring*****************
 'I am a docstring.
 
-'''header*****************
+'''Header*****************
 '__author__ = "Makoa Santarini"
 '__copyright__ = "Copyright 2020 (C) DAWSON, Inc - All Rights Reserved"
 '__license__ = "Proprietary and confidential. Unauthorized copying of this file, via any medium is strictly prohibited."
