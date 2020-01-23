@@ -1,4 +1,4 @@
-'''Docstring*****************
+'''ScriptName*****************
 'I am a docstring.
 
 '''Header*****************
